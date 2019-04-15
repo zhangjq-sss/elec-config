@@ -1,7 +1,7 @@
 spring:
    datasource:
       name: crm
-      url: jdbc:mysql://localhost:3306/cups_crm?useUnicode=true&characterEncoding=UTF8&useSSL=false
+      url: jdbc:mysql://localhost:3306/elec-product?useUnicode=true&characterEncoding=UTF8&useSSL=false
       username: ENC(9397CYXMXkHpb5TVl6FlPw==)
       password: ENC(xQWl6FxysKQYa+flq+EwVg==)
       # 使用druid数据源
