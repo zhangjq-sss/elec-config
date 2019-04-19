@@ -1,23 +1,23 @@
 token:
-  expire-time: 259200000
-      
+  expire-time: 259200000   
 eureka:
   client:
     healthcheck:
       enabled: true
-           
-
 feign:  
   hystrix:  
-    enabled: true
-    
+    enabled: true  
+#hystrix 配置
 hystrix:
   command:
     default:
       execution:
+        timeout:
+        #如果enabled设置为false，则请求超时交给ribbon控制
+          enabled: true
         isolation:
           thread:
-            timeoutinMilliseconds: 5000
+            timeoutInMilliseconds: 5000
 ribbon:
   connectTimeout: 500
 
