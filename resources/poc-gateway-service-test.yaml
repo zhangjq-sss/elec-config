@@ -1,5 +1,5 @@
 filter:
-   ignore-uri: /api/login,/api/logout,/api/static
+   ignore-uri: /api/login,/api/logout,/api/static,/api/sendMobileCode,/api/varifyMObileCode
 
 zuul:
   host:
