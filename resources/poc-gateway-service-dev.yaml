@@ -32,27 +32,25 @@ feign:
     enabled: true
 
 ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
   
+#hystrix 配置
 hystrix:
-  threadpool:
+  command:
     default:
-      coreSize: 500
-      maxQueueSize: 500
-      queueSizeRejectionThreshold: 300
       execution:
         timeout:
+        #如果enabled设置为false，则请求超时交给ribbon控制
           enabled: true
         isolation:
-          strategy: THREAD
-          semaphore:
-            maxConcurrentRequests: 1024
           thread:
-            timeoutInMilliseconds: 60000
-            ribbon:
-              ReadTimeout: 60000
-              ConnectTimeout: 30000
+            timeoutInMilliseconds: 10000
+
+#如果想对单独的某个服务进行详细配置，如下
+#poc-customer-service:
+#  ribbon:
+#    connectTimeout: 5000
  
 logging:
   level:
