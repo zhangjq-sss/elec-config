@@ -34,7 +34,7 @@ feign:
   
 logging:
   level:
-    com.cups.poc: INFO
+    com.poc: INFO
     jdbc.audit: ERROR
     jdbc.resultset: ERROR
     jdbc.sqlonly: ERROR

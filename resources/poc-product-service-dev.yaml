@@ -29,7 +29,7 @@ feign:
   
 logging:
   level:
-    com.cups.poc: DEBUG
+    com.poc: DEBUG
     jdbc.audit: INFO
     jdbc.resultset: INFO
     jdbc.sqlonly: INFO

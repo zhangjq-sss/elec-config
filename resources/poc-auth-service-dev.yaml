@@ -28,7 +28,7 @@ ribbon:
   
 logging:
   level:
-    com.cups.poc: DEBUG
+    com.poc: DEBUG
     jdbc.audit: ERROR
     jdbc.resultset: ERROR
     jdbc.sqlonly: ERROR
