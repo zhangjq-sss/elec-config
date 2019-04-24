@@ -45,7 +45,22 @@ hystrix:
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
 #  ribbon:
-#    connectTimeout: 5000  
+#    connectTimeout: 5000
+
+redis:
+    pool:
+         maxActive: 300
+         maxIdle: 100
+         maxWait: 1000
+    host: localhost
+    port: 6379
+    password:
+    timeout: 2000
+    # 服务或应用名
+    sysName: auth-service
+    enable: true
+    database: 0
+  
 logging:
   level:
     com.poc: DEBUG
