@@ -88,7 +88,7 @@ tx-lcn:
     # 调用链长度等级，默认值为3（优化选项。系统中每个请求大致调用链平均长度，估算值。）
     chain-level: 3
     # 该参数为tc与tm通讯时的最大超时时间，单位ms。该参数不需要配置会在连接初始化时由tm返回。
-    tm-rpc-timeout: 2000
+    #tm-rpc-timeout: 2000
     # 该参数为事务方法注解切面的orderNumber，默认值为0.
     dtx-aspect-order: 0
     # 该参数为事务连接资源方法切面的orderNumber，默认值为0.
@@ -96,4 +96,4 @@ tx-lcn:
   #aspect:
     #log:
     # 该参数是分布式事务框架存储的业务切面信息。采用的是h2数据库。绝对路径。该参数默认的值为{user.dir}/.txlcn/{application.name}-{application.port}
-     # file-path: ../logs/.txlcn/{application.name}-{application.port}
+     # file-path: {user.dir}/logs/.txlcn/{application.name}-{application.port}
