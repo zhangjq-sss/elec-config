@@ -54,7 +54,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 4000
+            timeoutInMilliseconds: 8000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:

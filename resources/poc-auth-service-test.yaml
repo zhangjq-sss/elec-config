@@ -14,7 +14,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 4000
+            timeoutInMilliseconds: 8000
 ribbon:
   #Ribbon允许最大连接数，即所有后端微服务实例请求并发数之和的最大值。
   MaxTotalConnections: 500
