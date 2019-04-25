@@ -27,28 +27,6 @@ spring:
 feign:  
   hystrix:  
     enabled: true
-ribbon:
-  ReadTimeout: 500
-  ConnectTimeout: 500
-  # 关闭Ribbon的重试机制
-  MaxAutoRetriesNextServer: 0
-  
-#hystrix 配置
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-        #如果enabled设置为false，则请求超时交给ribbon控制
-          enabled: true
-        isolation:
-          thread:
-            timeoutInMilliseconds: 500
-
-#如果想对单独的某个服务进行详细配置，如下
-#poc-customer-service:
-#  ribbon:
-#    connectTimeout: 5000
 
 redis:
     pool:
@@ -72,28 +50,3 @@ logging:
     jdbc.sqlonly: ERROR
     jdbc.sqltiming: INFO
     jdbc.connection: ERROR
-# tx-lcn分布式事务参数表
-tx-lcn:
-  ribbon:
-    loadbalancer:
-      dtx:
-      # 是否启动LCN负载均衡策略(优化选项，开启与否，功能不受影响)
-        enabled: true
-  client:
-# tx-manager 的配置地址，可以指定TM集群中的任何一个或多个地址
-# tx-manager 下集群策略，每个TC都会从始至终<断线重连>与TM集群保持集群大小个连接。
-# TM方，每有TM进入集群，会找到所有TC并通知其与新TM建立连接。
-# TC方，启动时按配置与集群建立连接，成功后，会再与集群协商，查询集群大小并保持与所有TM的连接
-    manager-address: 127.0.0.1:8070
-    # 调用链长度等级，默认值为3（优化选项。系统中每个请求大致调用链平均长度，估算值。）
-    chain-level: 3
-    # 该参数为事务方法注解切面的orderNumber，默认值为0.
-    dtx-aspect-order: 0
-    # 该参数为事务连接资源方法切面的orderNumber，默认值为0.
-    resource-order: 0
-    # 该参数为tc与tm通讯时的最大超时时间，单位ms。该参数不需要配置会在连接初始化时由tm返回。
-    #tm-rpc-timeout: 2000
-  #aspect:
-    #log:
-    # 该参数是分布式事务框架存储的业务切面信息。采用的是h2数据库。绝对路径。该参数默认的值为{user.dir}/.txlcn/{application.name}-{application.port}
-     # file-path: {user.dir}/logs/.txlcn/{application.name}-{application.port}
