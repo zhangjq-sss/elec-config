@@ -38,8 +38,10 @@ feign:
     enabled: true
 
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 2000
+  ConnectTimeout: 2000
+  # 关闭Ribbon的重试机制
+  MaxAutoRetriesNextServer: 0
   
 #hystrix 配置
 hystrix:
@@ -51,7 +53,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 2000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
