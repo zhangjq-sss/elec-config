@@ -39,8 +39,8 @@ ribbon:
   MaxTotalConnections: 500
   #单个后端微服务实例能接收的最大请求并发数  
   MaxConnectionsPerHost: 500
-  ReadTimeout: 2000
-  ConnectTimeout: 2000
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 1
   
@@ -54,7 +54,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 8000
+            timeoutInMilliseconds: 20000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
