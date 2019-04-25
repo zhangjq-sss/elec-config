@@ -2,6 +2,9 @@ filter:
    ignore-uri: /api/login,/api/logout,/api/static,/api/sendMobileCode,/api/varifyMObileCode
 
 zuul:
+  #hystrix信号量semaphore的设置，默认为100，决定了hystrix并发请求数 tomcat线程池默认是200
+  semaphore:
+    max-semaphores: 500
   host:
     maxTotalConnections: 2048
     maxPerRouteConnections: 1024
@@ -43,6 +46,10 @@ feign:
     enabled: true
 
 ribbon:
+  #Ribbon允许最大连接数，即所有后端微服务实例请求并发数之和的最大值。
+  MaxTotalConnections: 500
+  #单个后端微服务实例能接收的最大请求并发数  
+  MaxConnectionsPerHost: 500
   ReadTimeout: 2000
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
