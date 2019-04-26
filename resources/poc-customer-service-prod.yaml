@@ -34,13 +34,22 @@ feign:
   hystrix:
     enabled: true
 ribbon:
-  ReadTimeout: 2000
-  ConnectTimeout: 2000
+  #Ribbon允许最大连接数，即所有后端微服务实例请求并发数之和的最大值。
+  MaxTotalConnections: 500
+  #单个后端微服务实例能接收的最大请求并发数  
+  MaxConnectionsPerHost: 500
+  ReadTimeout: 1000
+  ConnectTimeout: 1000
   # 关闭Ribbon的重试机制
-  MaxAutoRetriesNextServer: 0
+  MaxAutoRetriesNextServer: 1
   
 #hystrix 配置
 hystrix:
+  threadpool:
+    default:
+      coreSize: 20 #并发执行的最大线程数，默认10
+      maxQueueSize: 500 #BlockingQueue的最大队列数，默认值-1
+      queueSizeRejectionThreshold: 500 #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝，默认值5
   command:
     default:
       execution:
@@ -49,7 +58,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 8000
+            timeoutInMilliseconds: 4000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
