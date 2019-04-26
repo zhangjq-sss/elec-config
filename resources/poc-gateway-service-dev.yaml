@@ -30,17 +30,14 @@ zuul:
     #poc-admin-service:
       #path: /admin/**
       #serviceId: poc-admin-service
-feign:  
-  hystrix:  
-    enabled: true
 
 ribbon:
   #Ribbon允许最大连接数，即所有后端微服务实例请求并发数之和的最大值。
   MaxTotalConnections: 500
   #单个后端微服务实例能接收的最大请求并发数  
   MaxConnectionsPerHost: 500
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 1000
+  ConnectTimeout: 1000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 1
   
@@ -48,13 +45,17 @@ ribbon:
 hystrix:
   command:
     default:
+      fallback:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 50
       execution:
         timeout:
         #如果enabled设置为false，则请求超时交给ribbon控制
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 4000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
