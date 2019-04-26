@@ -56,7 +56,7 @@ ribbon:
   ReadTimeout: 2000
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
-  MaxAutoRetriesNextServer: 0 #慎用
+  MaxAutoRetriesNextServer: 1 #慎用
   
 #hystrix 配置
 hystrix:
