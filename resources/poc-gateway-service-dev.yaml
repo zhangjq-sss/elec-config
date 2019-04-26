@@ -51,8 +51,8 @@ ribbon:
   MaxTotalConnections: 500
   #单个后端微服务实例能接收的最大请求并发数  
   MaxConnectionsPerHost: 500
-  ReadTimeout: 1000
-  ConnectTimeout: 1000
+  ReadTimeout: 2000
+  ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 0 #慎用
   
