@@ -43,12 +43,15 @@ ribbon:
   
 #hystrix 配置
 hystrix:
+  threadpool:
+    default:
+      coreSize: 50
   command:
     default:
-      fallback:
-        isolation:
-          semaphore:
-            maxConcurrentRequests: 50
+      #fallback:
+        #isolation:
+          #semaphore:
+            #maxConcurrentRequests: 50
       execution:
         timeout:
         #如果enabled设置为false，则请求超时交给ribbon控制
