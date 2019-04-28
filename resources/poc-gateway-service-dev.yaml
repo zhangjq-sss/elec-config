@@ -21,8 +21,8 @@ zuul:
   semaphore:
     max-semaphores: 500
   host:
-    socket-timeout-millis: 4000
-    connect-timeout-millis: 4000
+    socket-timeout-millis: 6000
+    connect-timeout-millis: 6000
     maxTotalConnections: 2048
     maxPerRouteConnections: 1024
   routes:
