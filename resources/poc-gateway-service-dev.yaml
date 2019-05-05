@@ -68,7 +68,7 @@ hystrix:
       execution:
         timeout:
         #如果enabled设置为false，则请求超时交给ribbon控制
-          enabled: false
+          enabled: true
         isolation:
           thread:
             timeoutInMilliseconds: 4000
