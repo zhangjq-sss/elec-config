@@ -57,6 +57,18 @@ spring:
    jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
+   rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      publisher-confirms: true
+      publisher-returns: true
+      listener:
+         direct:
+            acknowledge-mode: MANUAL
+         simple:
+            acknowledge-mode: MANUAL
 feign:  
   hystrix:  
     enabled: true
