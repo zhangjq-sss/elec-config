@@ -43,6 +43,13 @@ spring:
       port: 5672
       username: guest
       password: guest
+      publisher-confirms: true
+      publisher-returns: true
+      listener:
+         direct:
+            acknowledge-mode: MANUAL
+         simple:
+            acknowledge-mode: MANUAL
 feign:  
   hystrix:  
     enabled: true
