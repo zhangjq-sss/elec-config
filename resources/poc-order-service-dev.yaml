@@ -41,8 +41,8 @@ spring:
    rabbitmq:
       host: 192.168.18.150
       port: 5672
-      username: guest
-      password: guest
+      username: cloud
+      password: cloud
       publisher-confirms: true
       publisher-returns: true
       listener:
