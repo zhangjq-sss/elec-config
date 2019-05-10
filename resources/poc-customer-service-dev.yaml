@@ -38,6 +38,19 @@ spring:
    jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
+   redis:
+      pool:
+         maxActive: 300
+         maxIdle: 100
+         maxWait: 1000
+      host: 192.168.18.150
+      port: 6379
+      password:
+      timeout: 2000
+      # 服务或应用名
+      sysName: customer-service
+      enable: true
+      database: 0
 eureka:
   client:
     healthcheck:
@@ -76,20 +89,6 @@ hystrix:
 #poc-customer-service:
 #  ribbon:
 #    connectTimeout: 5000
-
-redis:
-    pool:
-         maxActive: 300
-         maxIdle: 100
-         maxWait: 1000
-    host: 192.168.18.150
-    port: 6379
-    password:
-    timeout: 2000
-    # 服务或应用名
-    sysName: auth-service
-    enable: true
-    database: 0
 
 logging:
   level:

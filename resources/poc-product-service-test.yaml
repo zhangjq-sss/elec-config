@@ -51,6 +51,19 @@ spring:
             #acknowledge-mode: MANUAL
          simple:
             acknowledge-mode: MANUAL
+   redis:
+      pool:
+         maxActive: 300
+         maxIdle: 100
+         maxWait: 1000
+      host: 192.168.18.150
+      port: 6379
+      password:
+      timeout: 2000
+      # 服务或应用名
+      sysName: product-service
+      enable: true
+      database: 0
 feign:  
   hystrix:  
     enabled: true

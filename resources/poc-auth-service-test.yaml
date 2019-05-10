@@ -51,19 +51,20 @@ hystrix:
 #  ribbon:
 #    connectTimeout: 500
 
-redis:
-    pool:
+spring:
+   redis:
+      pool:
          maxActive: 300
          maxIdle: 100
          maxWait: 1000
-    host: localhost
-    port: 6379
-    password:
-    timeout: 2000
-    # 服务或应用名
-    sysName: auth-service
-    enable: true
-    database: 0
+      host: 192.168.18.150
+      port: 6379
+      password:
+      timeout: 2000
+      # 服务或应用名
+      sysName: auth-service
+      enable: true
+      database: 0
 
 logging:
   level:
