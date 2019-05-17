@@ -55,6 +55,10 @@ ribbon:
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 1 #慎用
+  #从Dalston开始，Ribbon支持配置eager load实现在启动时就初始化Ribbon相关类。
+  eager-load:
+    enabled: true
+    clients: client1, client2, client3
   
 #hystrix 配置
 hystrix:
