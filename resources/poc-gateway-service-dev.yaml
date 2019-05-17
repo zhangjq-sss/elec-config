@@ -89,16 +89,16 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-   rabbitmq:
-     host: 192.168.18.150
-     port: 5672
-     username: cloud
-     password: cloud
-     publisher-confirms: true
-     publisher-returns: true
-     listener:
-        #针对direct模式
-        #direct:
-           #acknowledge-mode: MANUAL
-        simple:
-           acknowledge-mode: MANUAL
+  rabbitmq:
+    host: 192.168.18.150
+    port: 5672
+    username: cloud
+    password: cloud
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+       #针对direct模式
+       #direct:
+          #acknowledge-mode: MANUAL
+       simple:
+          acknowledge-mode: MANUAL
