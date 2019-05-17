@@ -33,9 +33,6 @@ ribbon:
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 0 #慎用
-  eager-load:
-    enabled: true
-    clients: client1, client2, client3
 
 #hystrix 配置
 hystrix:
