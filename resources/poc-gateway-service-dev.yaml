@@ -54,7 +54,7 @@ ribbon:
   ReadTimeout: 2000
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
-  MaxAutoRetriesNextServer: 1 #慎用
+  MaxAutoRetriesNextServer: 0 #慎用
   #从Dalston开始，Ribbon支持配置eager load实现在启动时就初始化Ribbon相关类。
   eager-load:
     enabled: true
@@ -75,7 +75,7 @@ hystrix:
           enabled: false
         isolation:
           thread:
-            timeoutInMilliseconds: 8000
+            timeoutInMilliseconds: 4000
 
 #如果想对单独的某个服务进行详细配置，如下
 #poc-customer-service:
