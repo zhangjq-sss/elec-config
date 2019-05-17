@@ -51,11 +51,14 @@ ribbon:
   MaxTotalConnections: 500
   #单个后端微服务实例能接收的最大请求并发数  
   MaxConnectionsPerHost: 500
-  ReadTimeout: 4000
+  ReadTimeout: 2000
   ConnectTimeout: 2000
   # 关闭Ribbon的重试机制
   MaxAutoRetriesNextServer: 0 #慎用
-
+  #从Dalston开始，Ribbon支持配置eager load实现在启动时就初始化Ribbon相关类。
+  eager-load:
+    enabled: true
+    clients: client1, client2, client3
   
 #hystrix 配置
 hystrix:
