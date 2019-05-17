@@ -70,7 +70,20 @@ spring:
       sysName: auth-service
       enable: true
       database: 0
-  
+   rabbitmq:
+      host: 192.168.18.150
+      port: 5672
+      username: cloud
+      password: cloud
+      publisher-confirms: true
+      publisher-returns: true
+      listener:
+         #针对direct模式
+         #direct:
+            #acknowledge-mode: MANUAL
+         simple:
+            acknowledge-mode: MANUAL
+
 logging:
   level:
     com.poc: DEBUG
